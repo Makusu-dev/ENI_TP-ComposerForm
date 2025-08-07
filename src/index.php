@@ -21,16 +21,16 @@ use App\Entity\Form2;
 <?php
 
 $formulaire= new Form2('','Formulaire d\'inscription');
-$formulaire->setText("nom :",'idNom');
-$formulaire->setText("prenom :",'idPrenom');
-$formulaire->setText("email :",'idEmail');
-$formulaire->setText("téléphone :",'idTelephone');
-$formulaire->setRadio(['homme','femme','autre'],'Genre :','idGenre');
-$formulaire->setCheckbox(['Magic','Pokemon TCG','Clash Royale','Renversement du capitalisme'],'Ateliers souhaités','checkAtelier');
-$formulaire->setSelect(['visiteur','Bénévole','Intervenant'],'Type de participation','participationSelectId');
-$formulaire->setCheckbox(['J\'accepte les conditions de l\'évènement'],'Conditions contractuelles veuillez signer s\'il vous plaît mais impérativement quand même','checkConditions');
+$formulaire->setText("nom :",'idNom','nom');
+$formulaire->setText("prenom :",'idPrenom','prenom');
+$formulaire->setText("email :",'idEmail','email');
+$formulaire->setText("téléphone :",'idTelephone','telephone');
+$formulaire->setRadio(['homme','femme','autre'],'Genre :','idGenre','genre');
+$formulaire->setCheckbox(['Magic','Pokemon TCG','Clash Royale','Renversement du capitalisme'],'Ateliers souhaités','checkAtelier','ateliers');
+$formulaire->setSelect(['visiteur','Bénévole','Intervenant'],'Type de participation','participationSelectId','participation');
+$formulaire->setCheckbox(['J\'accepte les conditions de l\'évènement'],'Conditions contractuelles veuillez signer s\'il vous plaît mais impérativement quand même','checkConditions','conditions');
 $formulaire->addFile('Photo','photo');
-$formulaire->addTextarea('Commentaires: ','idCommentaire');
+$formulaire->addTextarea('Commentaires: ','commentaires');add .
 
 $formulaire->setButton();
 

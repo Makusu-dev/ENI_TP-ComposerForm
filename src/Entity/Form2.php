@@ -8,27 +8,27 @@ class Form2 extends Form
         parent::__construct($url,$title);
     }
 
-    public function setRadio($stringArray,string $text,string $id): void {
+    public function setRadio($stringArray,string $text,string $id, string $name): void {
         $this->formHtml=$this->formHtml."<label for='\"$id'>$text</label>";
         $this->formHtml=$this->formHtml."<fieldset>";
-        foreach ($stringArray as $string) {
-            $this->addRadio($string,$text);
+        foreach ($stringArray as $text) {
+            $this->addRadio($text,$name);
         }
         $this->formHtml=$this->formHtml."</fieldset>";
     }
 
-    public function setCheckbox($stringArray,string $text,string $id): void {
+    public function setCheckbox($stringArray,string $text,string $id, string $name): void {
         $this->formHtml=$this->formHtml."<label for='\"$id'>$text</label>";
         $this->formHtml=$this->formHtml."<fieldset>";
         foreach ($stringArray as $string) {
-            $this->addCheckbox($string,$text);
+            $this->addCheckbox($text,$name);
         }
         $this->formHtml=$this->formHtml."</fieldset>";
     }
 
-    public function setSelect($stringArray,string $text,string $id): void {
+    public function setSelect($stringArray,string $text,string $id,string $name): void {
         $this->formHtml=$this->formHtml."<label for='\"$id'>$text</label>";
-        $this->formHtml=$this->formHtml."<fieldset><select id=\".$id\">";
+        $this->formHtml=$this->formHtml."<fieldset><select name=\"$name\" id=\".$id\">";
         foreach ($stringArray as $string) {
             $this->addSelectOption($string,$text);
         }

@@ -19,9 +19,9 @@ class Form
         return $this->formHtml;
     }
 
-    public function setText(string $text,string $id): void {
+    public function setText(string $text,string $id, string $name): void {
         $this->formHtml=$this->formHtml."<label for=\"$id\">$text</label>";
-        $this->formHtml=$this->formHtml."<div><input id=\"$id\" placeholder=\"$text\"></div>";
+        $this->formHtml=$this->formHtml."<div><input name=\"$name\" id=\"$id\" placeholder=\"$text\"></div>";
     }
     public function setButton(string $text='Submit'): void {
         $this->formHtml=$this->formHtml."<div><button>$text</button></div>";
